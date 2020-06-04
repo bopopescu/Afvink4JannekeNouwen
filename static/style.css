@@ -1,0 +1,25 @@
+body{
+    margin: 20px;
+    background-color: #242729;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+}
+
+table {
+   border-collapse: collapse;
+   table-layout: fixed;
+
+}
+
+td {
+    word-break: break-all;
+    white-space: normal;
+    padding: 10px;
+    max-width: 500px;
+    text-align: left;
+}

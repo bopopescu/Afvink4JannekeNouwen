@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
     <title>Onderzoek sequentie</title>
 </head>
 <body>
-    <form>Uw sequentie:
+    <form>
+        <h2>Your sequence:</h2>
         <input
         type="text"
         name="seq"
@@ -17,10 +19,46 @@
     {% if result %}
         <p>{{ result }}</p>
     {% endif %}
-    {% if protein %}
-        <form>
-            <input type="submit" name="blast" value="Blast your sequence!">
-        </form>
+    {% if blast_result %}
+        <h2>tBLASTn results:</h2>
+        <table>
+            <tr>
+                <th>Description:</th>
+                <td>{{ blast_result[0] }}</td>
+            </tr>
+            <tr>
+                <th>Accession:</th>
+                <td>{{ blast_result[1] }}</td>
+            </tr>
+            <tr>
+                <th>E-value:</th>
+                <td>{{ blast_result[2] }}</td>
+            </tr>
+            <tr>
+                <th>Percent Identity:</th>
+                <td>{{ blast_result[3] }}</td>
+            </tr>
+            <tr>
+                <th>Total score:</th>
+                <td>{{ blast_result[4] }}</td>
+            </tr>
+        </table>
+    {% endif %}
+    {% if dna_result %}
+        <table>
+            <tr>
+                <th>DNA sequence:</th>
+                <td>{{ dna_result['dna'] }}</td>
+            </tr>
+            <tr>
+                <th>RNA sequence:</th>
+                <td>{{ dna_result['rna'] }}</td>
+            </tr>
+            <tr>
+                <th>Protein sequence:</th>
+                <td>{{ dna_result['protein'] }}</td>
+            </tr>
+        </table>
     {% endif %}
 </body>
 </html>
