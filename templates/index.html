@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onderzoek sequentie</title>
+</head>
+<body>
+    <form>Uw sequentie:
+        <input
+        type="text"
+        name="seq"
+        pattern='^[a-zA-Z\\*]*$'
+        value='{{ seq }}'
+        required>
+        <input type="submit" value="Check">
+    </form>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+    {% if protein %}
+        <form>
+            <input type="submit" name="blast" value="Blast your sequence!">
+        </form>
+    {% endif %}
+</body>
+</html>
