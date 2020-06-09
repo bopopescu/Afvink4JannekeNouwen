@@ -42,12 +42,11 @@ def hello_world():
 
 
 def blast(seq):
-    # blast_result = NCBIWWW.qblast("tblastn", "nr", seq,
-    #                               format_type="XML", hitlist_size=1)
-    # blast_data_file = open("html_blast.xml", "w")
-    # blast_data_file.write(blast_result.read())
-    # blast_data_file.close()
-    pass
+    blast_result = NCBIWWW.qblast("tblastn", "nr", seq,
+                                  format_type="XML", hitlist_size=1)
+    blast_data_file = open("html_blast.xml", "w")
+    blast_data_file.write(blast_result.read())
+    blast_data_file.close()
 
 
 def get_blast_info():
